@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+</head>
+<body>
+    <h1>Bhaskara</h1>
+    <p>A:<input type="number" name="A" id="A"></p> 
+    <p>B:<input type="number" name="B" id="B"></p>
+    <p>C:<input type="number" name="C" id="C"></p>
+    <input type="button" value="Calcular" onclick="Raizes(A,B,C)">
+    <div id = 'Resposta'>Resultado:</div>
+
+
+    <script>
+        function Raizes(ax2,bx,c){   
+            let n1 = Number(ax2.value)
+            let n2 = Number(bx.value)
+            let n3 = Number(c.value)
+            let Resposta = window.document.getElementById('Resposta')
+            let raizes = []
+            let delta = (n2**2) - (4*n1*n3)
+            if(delta < 0){
+                Resposta.innerHTML = ' Delta é negativo' 
+            }
+            else{
+                Resposta.innerHTML = 'Raizes: '
+                let x1 = (-n2 + Math.sqrt(delta))/(2*n1)
+                let x2 = (-n2 - Math.sqrt(delta))/(2*n1)
+                raizes.push(x1)
+                raizes.push(x2)
+                return Resposta.innerHTML += raizes
+            }  
+        }
+    </script>
+
+</body>
+</html>

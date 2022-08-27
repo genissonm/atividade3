@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de notas</title>
+</head>
+<body>
+    <h1>Notas</h1>
+    <p>Nota:<input type="number" name="Nota" id="Nota"></p>
+    <input type="button" value="Calcular situação" onclick="VerificaSituacao()">
+    <div id ='Resposta'></div>
+
+    <script>
+        function VerificaSituacao(){
+            let Nota = window.document.getElementById('Nota')
+            let Resposta = window.document.getElementById('Resposta')
+            let valor = Number(Nota.value)
+            let multiplo = Math.ceil(valor/5)*5
+            if(valor < 38){
+                Resposta.innerHTML = 'Reprovado'
+            }
+            else if(valor < 40 && (valor - multiplo) < 3){
+                Resposta.innerHTML = '<p>Aprovado<\p>'
+                Resposta.innerHTML += `Nota arredondada: ${multiplo}`
+            }
+            else{
+                Resposta.innerHTML = '<p>Aprovado<\p>'
+                Resposta.innerHTML += `Nota arredondada: ${multiplo}` 
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

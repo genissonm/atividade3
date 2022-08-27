@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUIDY</title>
+</head>
+<body>
+    <h1>LUIDYMoura</h1>
+    Número:<input type="number" name="Numero" id="Numero">
+    <input type="button" value="Verificar" onclick="Verifica(Numero)">
+    <div id="Resposta"></div>
+
+    <script>
+        function Verifica(Valor){
+            let Resposta = window.document.getElementById('Resposta')
+            let n = Number(Valor.value)
+            let Lista = []
+            Resposta.innerHTML = n
+            for(let i = 1; i <= n; i++){
+                if((i%5 == 0) && (i%9 == 0)){
+                    Lista.push('LuidyMoura')
+                }
+                else if(i%5 == 0){
+                    Lista.push('Luidy')
+                }
+                else if(i%9 == 0){
+                    Lista.push('Moura')
+                }
+                else{
+                    Lista.push(i)
+                }
+            Resposta.innerHTML = Lista                
+            }
+        }
+    </script>
+    
+</body>
+</html>
